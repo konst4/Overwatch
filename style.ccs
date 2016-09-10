@@ -1,0 +1,13 @@
+<style>
+
+{ margin: 0; padding: 0; }
+
+#tracer{ 
+        background: "tracer.jpg" ;
+        no-repeat center center fixed; 
+        background-size: cover;
+}
+
+
+</style>
+
