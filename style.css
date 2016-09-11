@@ -42,7 +42,7 @@ li a:hover {
 }
 .banner{
 height:127px;
-width:1052px;
+overflow:hidden;
 }
 h1 { color: #c9d0d4; font-family: 'Helvetica Neue', sans-serif; font-size: 46px; font-weight: 100; line-height: 50px; letter-spacing: 1px; padding: 0 0 40px; border-bottom: double #555; }
 </style>
