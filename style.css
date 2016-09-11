@@ -20,13 +20,7 @@
 .menu{
 overflow:auto
 }
-@import url('http://fonts.googleapis.com/css?family=Lato');
 
-body, html{
-  height: 100%;
-  background: #222222;
-	font-family: 'Lato', sans-serif;
-}
 
 .container{
   display: block;
