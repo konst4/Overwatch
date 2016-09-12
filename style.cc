@@ -12,16 +12,29 @@
 { margin: 0; padding: 0; }
 
 #tracer{ 
-        background: "tracer.jpg" ;
+        background-size: 100% 100%;
+    	background-repeat: no-repeat;
         no-repeat center center fixed; 
-        background-size: cover;
+  	background-size: contain;
 }
 
 #killdeath{ 
-        background: "tracer.jpg" ;
+        background: "killdeath.jpg" 50% no-repeat;
         no-repeat center center fixed; 
         background-size: cover;
+  	background-size: contain;
 }
+
+
+#banner{
+    position: center;
+    left: 9999999999px;
+    top: 9999999999px;
+    z-index: -1;
+}
+
+
+
 
 <div class="styled-select">
 .styled-select select {
@@ -39,7 +52,15 @@
 
 
 
-
+success {
+    width: 200px;
+    height: 100px;
+    background-color: yellow;
+    /* Rotate div */
+    -ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(7deg);
+}
 
 
 
