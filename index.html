@@ -21,11 +21,14 @@
       <h1>
          Overwatch Stat search
       </h1>
-      <form action="demo_form.asp">
-         <div id=playerName> Search database:</div>
-         <input type="search" name="playerName" placeholder="Insert player name">
+      <div id=playerName> Search database:</div>
+    
+    <form action="success.html">
+        <input type="text" name="username" pattern="[A-Za-z0-9]{6,}" placeholder="Insert player name"
+        title="Please enter at least 6 alphanumeric characters">
+ 
          <input type="submit" value="Search">
-      </form>
+        </form>
 	  
 	  <select>
   <option value="us">United States</option>
