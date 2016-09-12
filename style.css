@@ -3,10 +3,23 @@
 { margin: 0; padding: 0; }
 
 #tracer{ 
-        background: "tracer.jpg" ;
-        no-repeat center center fixed; 
-        background-size: cover;
+        background: "killdeath.jpg";
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
 }
+
+#killdeath{ 
+        background: "killdeath.jpg";
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+
+
 .button {
     background-color: #0099ff; /* Green */
     border: none;
@@ -43,6 +56,8 @@ li a:hover {
 .banner{
 height:127px;
 overflow:hidden;
+display: block;
+margin: 0 auto;
 }
 h1 { color: #c9d0d4; font-family: 'Helvetica Neue', sans-serif; font-size: 46px; font-weight: 100; line-height: 50px; letter-spacing: 1px; padding: 0 0 40px; border-bottom: double #555; }
 </style>
