@@ -19,7 +19,14 @@ margin: 0; padding: 0; }
 	background-position: center;
 }
 
+#success {
+  transform: scale(4);
+}
 
+
+#table1{
+position = relative;
+}
 
 .button {
     background-color: #0099ff; /* Green */
