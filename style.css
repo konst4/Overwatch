@@ -2,12 +2,13 @@
 {
 margin: 0; padding: 0; }
 
-#tracer{ 
+#tracer{
+	background="tracer.jpg"; 
         background-size: 100% auto;
         background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
-	opacity:0.5;
+	z-index:-1;
 }
 
 #killdeath{ 
@@ -57,8 +58,15 @@ li a:hover {
 }
 .banner{
 height:16%;
-width:100%;
+width:99%;
+opacity:0.8;
 }
 h1 { color: #c9d0d4; font-family: 'Helvetica Neue', sans-serif; font-size: 46px; font-weight: 100; line-height: 50px; letter-spacing: 1px; padding: 0 0 40px; border-bottom: double #555; }
+footer {
+    position:fixed;
+    bottom:0%;
+    margin:0;
+    padding:0;
+}
 </style>
 
