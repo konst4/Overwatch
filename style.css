@@ -1,7 +1,8 @@
-n: 0; padding: 0; }
+<style>
+{
+margin: 0; padding: 0; }
 
 #tracer{ 
-        background: "killdeath.jpg";
         background-size: 100% auto;
         background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -35,7 +36,9 @@ ul {
     overflow: hidden;
     background-color: #333;
 }
-
+*{
+  padding: 0;
+}
 li {
     float: left;
 }
