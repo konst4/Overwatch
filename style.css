@@ -25,7 +25,7 @@ margin: 0; padding: 0; }
 
 
 #table1{
-position = relative;
+position:relative;
 }
 
 .button {
@@ -64,7 +64,7 @@ li a:hover {
     background-color: #111;
 }
 .banner{
-height:16%;
+height:100px;
 width:99%;
 opacity:0.8;
 }
