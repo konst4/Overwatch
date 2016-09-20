@@ -1,0 +1,78 @@
+<style>
+{
+margin: 0; padding: 0; }
+
+#tracer{
+	background="tracer.jpg"; 
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	z-index:-1;
+}
+
+#killdeath{ 
+        background: "killdeath.jpg";
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+
+
+.button {
+    background-color: #0099ff; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+#success{
+transform: scale(4);
+}
+#table1{
+position:relative;
+}
+*{
+  padding: 0;
+}
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+.banner{
+height:16%;
+width:99%;
+opacity:0.8;
+}
+h1 { color: #c9d0d4; font-family: 'Helvetica Neue', sans-serif; font-size: 46px; font-weight: 100; line-height: 50px; letter-spacing: 1px; padding: 0 0 40px; border-bottom: double #555; }
+footer {
+    position:fixed;
+    bottom:0%;
+    margin:0;
+    padding:0;
+}
+</style>
+
