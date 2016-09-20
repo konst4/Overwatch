@@ -1,42 +1,46 @@
-<!DOCTYPE html>
 <html>
-   <!--This page is the main page it has links to the other pages. Allows the user to search a plater and acess the stats page. -->
-   <head>
+<head>
       <link rel="stylesheet" type="text/css" href="style.css">
    </head>
-   <!-- this is the menu -->
    <div class ="menu">
-      <div class=" nav.bar.element">
-         <ul>
-            <li><a class="active"href="index.html">Home</a></li>
-            <li><a href="stats.html">Stats</a></li>
-            <li><a href="patchnotes.html">Patch Notes</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="about.html">About</a></li>
-         </ul>
-      </div>
+	<div class=" nav.bar.element">
+	<ul>
+		<li><a class="active"href="index.html">Home</a></li>
+   		 <li><a href="stats.html">Stats</a></li>
+		<li><a href="patchnotes.html">Patch Notes</a></li>
+		<li><a href="contact.html">Contact</a></li>
+		<li><a href="about.html">About</a></li>
+    
+	</ul>
+	</div>
    </div>
    <body  id= "tracer"background="tracer.jpg"bgcolor="#00000">
-      <div ></div>
+   <div >
+</div>
       <h1>
          Overwatch Stat search
       </h1>
       <div id=playerName> Search database:</div>
-      <form action="success.html">
-         <input type="text" name="username" pattern="[A-Za-z0-9].{6,}" placeholder="Insert player name"
-            title="Please enter at least 6 alphanumeric characters">
+    
+    <form action="success.html">
+        <input type="text" name="username" pattern="[A-Za-z0-9].{6,}" placeholder="Insert player name"
+        title="Please enter at least 6 alphanumeric characters">
+ 
          <input type="submit" value="Search">
-      </form>
-      <select>
-         <option value="us">United States</option>
-         <option value="korea">Korea</option>
-         <option value="japan">Japan</option>
-         <option value="russia">Russia</option>
-      </select>
+        </form>
+	  
+	  <select>
+  <option value="us">United States</option>
+  <option value="korea">Korea</option>
+  <option value="japan">Japan</option>
+  <option value="russia">Russia</option>
+</select>
+
       <div>
-         <footer>
-            <img class="banner"  src="overwatch.jpg" >
-         </footer>
-   </body>
+<footer>
+        <img class="banner"  src="overwatch.jpg" >
+   </footer>
+
+  </body> 
    </div>
 </html>
