@@ -2,6 +2,15 @@
  * Created by konstantin on 9/20/16.
  */
 
+ // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAdurrdOMvJYm72h96FCv4oqPgbZLPmppQ",
+    authDomain: "swe432-14fcb.firebaseapp.com",
+    databaseURL: "https://swe432-14fcb.firebaseio.com",
+    storageBucket: "",
+    messagingSenderId: "1089613773942"
+  };
+  firebase.initializeApp(config);
 
 $(function () {
     var availableTags = [
