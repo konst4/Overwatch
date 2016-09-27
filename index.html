@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html>
 
-
-
 <!--This page is the main page it has links to the other pages. Allows the user to search a plater and acess the stats page. -->
 <head>
-
-<script type = "text/javascript" src = "firebase.js"></script>
-<script type = "text/javascript" src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script> <!-- connect to server -->
-
-
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -38,8 +31,8 @@
     </h1>
     <div id=playerName> Search database:</div>
     <form>
-        <input id="tags" type="text" name="username" pattern="[A-Za-z0-9].{6,}" placeholder="Insert player name"
-               title="Please enter at least 6 alphanumeric characters">
+        <input id="tags" type="text" name="username" pattern="[A-Za-z0-9].{6,}" placeholder="Arthas-11308"
+               title="Please enter at least 6 alphanumeric characters" value="Arthas-11308">
         <input id="search" type="button" value="search">
     </form>
     <select>
