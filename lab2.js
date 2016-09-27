@@ -2,15 +2,6 @@
  * Created by konstantin on 9/20/16.
  */
 
- // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAdurrdOMvJYm72h96FCv4oqPgbZLPmppQ",
-    authDomain: "swe432-14fcb.firebaseapp.com",
-    databaseURL: "https://swe432-14fcb.firebaseio.com",
-    storageBucket: "",
-    messagingSenderId: "1089613773942"
-  };
-  firebase.initializeApp(config);
 
 $(function () {
     var availableTags = [
@@ -27,19 +18,15 @@ $(function () {
 $(document).ready(function () {
 
     createHTML = function () {
-        var data = [{
-            Character: "D.Va",
-            Change: " Defense Matrix After being activated, Defense Matrix will begin regenerating following a 1-second delay (formerly .5 seconds) Developer Comments: Defense Matrix was too efficient when tapped repeatedly, instead of being held. Now, the recovery delay matches the ability cooldown."
-        }, {
-            Character: "Hanzo",
-            Change: "Hanzo will now experience a 30% decrease in speed while aiming (formerly 40%) Maximum projectile speed has been increased by 30%"
-        }];
-        var result = "<ul id ='patch'>";
-        for (var i = 0; i < data.length; i++) {
-            result += "<li>" + data[i].Character + "<br>" + data[i].Change + "</li>";
-        }
-        result += "</ul>";
-        return result;
+        var data;
+        $.ajax({
+            url: "https://api.lootbox.eu/patch_notes", success: function (result) {
+                console.log(result.patchNotes[0].detail);
+                $('body').append("<div id=patch>" + result.patchNotes[0].detail + "</div>");
+            }
+        });
+        console.log(data);
+
     };
     patchnotes = function () {
         var result = createHTML();
@@ -48,16 +35,30 @@ $(document).ready(function () {
         $('.menu').hide();
         $('body').css({"background-color": "#ccf5ff"});
         $('body').append("<h2 id='requirement' title='Patchnotes'>hello</h2>");
-        var title=document.getElementById('requirement');
+        var title = document.getElementById('requirement');
         $('#requirement').text(title.getAttribute('title'));
         $('body').append(result);
-        console.log(result);
+
     };
     search = function () {
+        var value = $('#tags').val();
+        console.log(value);
         $('#tracer').css('background-image', 'url(killdeath.jpg)');
         $('#hide').hide();
         $('.menu').hide();
         $('body').append('<div id = success><h1><font size="48" color="red">Success!</font></h1>');
+        $.ajax({
+            url: "https://api.lootbox.eu/pc/us/" + value + "/profile", success: function (result) {
+                // user name
+                console.log(result.data.username);
+                $('body').append('<div id = searchs><div id="header"><img src=' + result.data.avatar + '>'
+                    + '<h1>' + result.data.username + '</h1> </div>'+'<span style= "color:white" >'+
+                    "Current Competitive rank"+result.data.competitive.rank+'</span><div style=" color:white">'+'Total Competitive wins: '+result.data.games.competitive.wins+'</div></div>');
+                console.log(result.data);
+                console.log(result.data.avatar);
+            }
+        });
+
     };
     tracer = function () {
         $('#tracer').show();
@@ -70,6 +71,7 @@ $(document).ready(function () {
         $('body').css({"background-color": "black"});
         $('#patch').remove();
         $('#requirement').remove();
+        $('#searchs').remove();
     };
     stats = function () {
         $('.menu').hide();
