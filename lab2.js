@@ -1,12 +1,7 @@
-// Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAdurrdOMvJYm72h96FCv4oqPgbZLPmppQ",
-    authDomain: "swe432-14fcb.firebaseapp.com",
-    databaseURL: "https://swe432-14fcb.firebaseio.com",
-    storageBucket: "",
-    messagingSenderId: "1089613773942"
-  };
-  firebase.initializeApp(config);
+/**
+ * Created by konstantin on 9/20/16.
+ */
+
 
 $(function () {
     var availableTags = [
@@ -33,7 +28,6 @@ $(document).ready(function () {
         console.log(data);
 
     };
-
     patchnotes = function () {
         var result = createHTML();
         $('#tracer').css('background-image', 'none');
@@ -46,22 +40,6 @@ $(document).ready(function () {
         $('body').append(result);
 
     };
-	
-	search = function () {
-        value = $('#tags').val();
-        $('#tracer').css('background-image', 'url(killdeath.jpg)');
-        $('#hide').hide();
-        $('.menu').hide();
-        $('body').append('<div id = success><h1><font size="48" color="red">Success!</font></h1>');
-        var key = firebase.database().ref('username').child('posts').push({username:value});
-        var newval;
-        firebase.database().ref('username').child('posts').once('username').then(function(snapshot){
-            newval=snapshot().val();
-            alert(newval);
-            return true;
-        });
-	
-	/*
     search = function () {
         var value = $('#tags').val();
         console.log(value);
@@ -80,8 +58,8 @@ $(document).ready(function () {
                 console.log(result.data.avatar);
             }
         });
+
     };
-	*/
     tracer = function () {
         $('#tracer').show();
         $('#tracer').css('background-image', 'url(tracer.jpg)');
