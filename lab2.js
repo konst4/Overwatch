@@ -72,6 +72,7 @@ $(document).ready(function () {
         $('#patch').remove();
         $('#requirement').remove();
         $('#searchs').remove();
+        $('#patch').remove();
     };
     stats = function () {
         $('.menu').hide();
