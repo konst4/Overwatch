@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<!--This page is the main page it has links to the other pages. Allows the user to search a plater and acess the stats page. -->
+<!--This page is the main page it has links to the other pages. Allows the user to search a player and acess the stats page. -->
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -10,24 +10,20 @@
     <script type="text/javascript" src="lab2.js"></script>
     <script type = "text/javascript" src = "firebase.js"></script>
     <script type = "text/javascript" src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script> <!-- connect to server -->
-
-
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
- 
 	<script type="text/javascript" src="js/jquery-ui-1.8.4.custom.min.js"></script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	
 	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>             <!--firebase libraries-->
 	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-database.js"></script>
-
-	
-	
 </head>
-<!-- this is the menu -->
 
+<!-- this is the menu -->
 <div class="menu">
     <div class=" nav.bar.element">
         <ul id="nav">
@@ -41,7 +37,7 @@
 </div>
 <body id="tracer" background="tracer.jpg" bgcolor="#00000">
 
-<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+
 <script>
   // Initialize Firebase
   var config = {
