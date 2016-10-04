@@ -21781,7 +21781,7 @@
 	            return _react2.default.createElement(
 	                _reactRouter.Router,
 	                { history: _reactRouter.browserHistory },
-	                _react2.default.createElement(_reactRouter.Route, { path: '/Overwatch/index.html', component: Users }),
+	                _react2.default.createElement(_reactRouter.Route, { path: '/Overwatch/', component: Users }),
 	                _react2.default.createElement(_reactRouter.Route, { path: '/Overwatch/Search', component: Search }),
 	                _react2.default.createElement(_reactRouter.Route, { path: '/Overwatch/PatchNotes', component: PatchNotes }),
 	                _react2.default.createElement(_reactRouter.Route, { path: '/Overwatch/Stats', component: Stats })
