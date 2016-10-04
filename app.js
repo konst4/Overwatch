@@ -13,3 +13,6 @@ const app = document.getElementById('app');
 ReactDOM.render(
     <Layout/>,app
 );
+Router.run(routes, Router.HashLocation, (Root) => {
+    React.render(<Root/>, document.getElementById('app'));
+});
