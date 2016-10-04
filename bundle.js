@@ -21513,7 +21513,7 @@
 	    displayName: 'Stats',
 
 	    render: function render() {
-	        return document.getElementById("change").setAttribute("background", "/React/images/killdeath.jpg"), _react2.default.createElement(
+	        return document.getElementById("change").setAttribute("background", "/Overwatch/images/killdeath.jpg"), _react2.default.createElement(
 	            'div',
 	            null,
 	            _react2.default.createElement(
