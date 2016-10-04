@@ -27800,7 +27800,7 @@
 	                            null,
 	                            _react2.default.createElement(
 	                                "a",
-	                                { className: "active", href: "index.html" },
+	                                { className: "active", href: "" },
 	                                "Home"
 	                            )
 	                        ),
