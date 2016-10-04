@@ -21519,7 +21519,7 @@
 	            _react2.default.createElement(
 	                'center',
 	                null,
-	                _react2.default.createElement('img', { src: '/React/images/killdeathtext.png', height: '250', width: '1000' })
+	                _react2.default.createElement('img', { src: '/Overwatch/images/killdeathtext.png', height: '250', width: '1000' })
 	            ),
 	            _react2.default.createElement(
 	                'table',
