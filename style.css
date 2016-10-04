@@ -1,10 +1,10 @@
-<style > {
+{
     margin: 0;
     padding: 0;
 }
 
 #tracer {
-    background = "tracer.jpg";
+    background:url("../images/tracer.jpg");
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -13,7 +13,6 @@
 }
 
 #killdeath {
-    background: "killdeath.jpg";
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -26,6 +25,15 @@
 
 #table1 {
     position: relative;
+font-family: arial;
+font-family: sans-serif;
+border-collapse: collapse;
+width: 100%;
+background-color: black;
+color: lime;
+positive: absolute;
+top: 50%;
+
 }
 
 .button {
@@ -55,7 +63,7 @@ li {
     float: left;
 }
 
-li a, .stats {
+li a, .stats,#stats,#patchnotes {
     display: block;
     color: white;
     text-align: center;
@@ -63,12 +71,10 @@ li a, .stats {
     text-decoration: none;
 }
 
-li a:hover,.stats:hover {
+li a:hover,.stats:hover,#stats:hover,#patchnotes:hover {
     background-color: #111;
 }
-h1{
-    color: #080808;
-}
+
 .banner {
     height: 16%;
     width: 99%;
@@ -92,7 +98,20 @@ footer {
     margin: 0;
     padding: 0;
 }
+td,th{
+    border: 1px solid #dddddd;
+text-align: left;
+padding: 8px;
+}
 
+body{
+    background-size: 100% auto;
+    background-color:#ccf5ff;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    z-index: -1;
+}
 
 .ui-autocomplete {
     position: absolute;
@@ -119,5 +138,5 @@ footer {
 .ui-helper-hidden-accessible {
     display: none;
 }
-</style>
+
 
