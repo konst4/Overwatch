@@ -27506,7 +27506,7 @@
 	    }, {
 	        key: "handleClick",
 	        value: function handleClick() {
-	            this.context.router.push('/React/Search');
+	            this.context.router.push('/Overwatch/Search');
 	        }
 	    }, {
 	        key: "render",
@@ -27637,7 +27637,7 @@
 	    _createClass(Button, [{
 	        key: "handleClick",
 	        value: function handleClick() {
-	            this.context.router.push('/React/Search');
+	            this.context.router.push('/Overwatch/Search');
 	        }
 	    }, {
 	        key: "render",
@@ -27763,12 +27763,12 @@
 	    _createClass(Nav, [{
 	        key: "patchNotes",
 	        value: function patchNotes() {
-	            this.context.router.push('/React/PatchNotes');
+	            this.context.router.push('/Overwatch/PatchNotes');
 	        }
 	    }, {
 	        key: "stats",
 	        value: function stats() {
-	            this.context.router.push('React/Stats');
+	            this.context.router.push('Overwatch/Stats');
 	        }
 	    }, {
 	        key: "toggleCollapse",
