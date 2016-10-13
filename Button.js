@@ -12,12 +12,17 @@ export default class Button extends React.Component{
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick() {
+        //this.context.router.push('/React/Overwatch/Search');
         this.context.router.push('/Overwatch/Search');
     }
     render(){
         console.log(this.props);
         return(
-            <button onClick={this.handleClick}>{this.props.child}</button>);
+
+
+            <button onClick={this.handleClick}>{this.props.child}</button>
+                
+        );
     }
 }
 Button.contextTypes = {

@@ -10,6 +10,7 @@ import Nav from "./layout/Nav"
 import Body from "./layout/Body";
 import Region from "./layout/Region";
 var Ajax = require('react-ajax');
+require('react-router');
 const Users = React.createClass({
 
     render(){
@@ -24,9 +25,39 @@ const Users = React.createClass({
     }
 });
 var Stats = React.createClass({
+
+    componentWillMount() {
+        this.setState({Players: false});
+        document.getElementById("change").setAttribute("background", "none");
+
+        console.log(document.getElementById("region").value);
+        if (document.getElementById("region").value == "us") {
+            var region = "us";
+        } else if (document.getElementById("region").value == "korea") {
+            var region = "kr";
+        } else if (document.getElementById("region").value == "japan") {
+            var region = "kr";
+        } else if (document.getElementById("region").value == "russia") {
+            var region = "eu";
+        }
+
+        fetch('https://api.lootbox.eu/pc/' + region + "/" + document.getElementById("player").value + "/quick-play/heroes").then((result) => {
+            return result.json();
+        }).then((json) => {
+            this.setState({
+                Text: json.data.name,
+                data: json.data.playtime,
+            });
+        });
+
+    },
+
     render: function () {
+
+
         return (
             document.getElementById("change").setAttribute("background", "/Overwatch/images/killdeath.jpg"),
+
             <div>
                 <center><img src={'/Overwatch/images/killdeathtext.png'} height="250" width="1000"/></center>
 
@@ -91,10 +122,10 @@ const Search = React.createClass({
         } else if (document.getElementById("region").value == "russia") {
             var region = "eu";
         }
+
         fetch('https://api.lootbox.eu/pc/' + region + "/" + document.getElementById("player").value + "/profile").then((result) => {
             return result.json();
         }).then((json) => {
-            console.log(json);
             this.setState({
                 Players: json.data,
                 userName: json.data.username,
@@ -103,6 +134,7 @@ const Search = React.createClass({
             });
         });
     },
+
     render(){
         var divStyle = {
             color: "white"
@@ -170,7 +202,7 @@ export default class Layout extends React.Component {
 
         return (
             <Router history={browserHistory}>
-                <Route path="/Overwatch" component={Users}>
+                <Route path="/Overwatch/index.html" component={Users}>
                 </Route>
                 <Route path="/Overwatch/Search" component={Search}>
                 </Route>

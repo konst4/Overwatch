@@ -21,6 +21,7 @@ export default class Header extends React.Component {
 
     handleClick() {
         this.context.router.push('/Overwatch/Search');
+        //this.context.router.push('/React/Overwatch/Search');
     }
 
 
@@ -32,6 +33,9 @@ export default class Header extends React.Component {
                 <Title title={this.props.title}/>
                 <input id="player" value="Arthas-11308" onChange={this.handleChange.bind(this)}/>
                 <Button child={this.props.child}> </Button>
+                <form action="./graphs.html">
+                    <button type="submit">Hours Played</button>
+                </form>
             </div>
         );
     }else{

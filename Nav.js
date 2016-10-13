@@ -16,9 +16,11 @@ export default class Nav extends React.Component {
 
     patchNotes() {
         this.context.router.push('/Overwatch/PatchNotes');
+        //this.context.router.push('/React/Overwatch/PatchNotes');
     }
     stats(){
         this.context.router.push('Overwatch/Stats');
+       // this.context.router.push('React/Overwatch/Stats');
     }
     toggleCollapse() {
         const collapsed = !this.state.collapsed;
