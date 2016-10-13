@@ -7,8 +7,6 @@ The first scenario is Search. Users can search there character profile and then 
 
 Patch notes the user can click the patch notes button and receive the latest patch notes. The latest patch notes will be displayed to the user. There will also be links to the official blizzard site containing the patch updates.
 
-Not Implemented
-The leader boards will be able to display the user the best player of the game. 
-This will probably display the information graphically.
+We implemented the playtime visual display using bubbles for the different characters the user displays.
 
 Region select which will allow users check other region for player profiles.
