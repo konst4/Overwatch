@@ -60,19 +60,15 @@
 
 	var _reactRouter = __webpack_require__(173);
 
-	var _bootstrapWithoutJquery = __webpack_require__(393);
-
-	var _bootstrapWithoutJquery2 = _interopRequireDefault(_bootstrapWithoutJquery);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var app = document.getElementById('app'); /**
-	                                           * Created by konstantin on 9/24/16.
-	                                           */
+	/**
+	 * Created by konstantin on 9/24/16.
+	 */
 	// tutorial1.js
-
+	var app = document.getElementById('app');
 	_reactDom2.default.render(_react2.default.createElement(_Layout2.default, null), app);
-	_reactRouter.Router.run(routes, _reactRouter.Router.HashLocation, function (Root) {
+	_reactRouter.Router.run(_reactRouter.Route, _reactRouter.Router.HashLocation, function (Root) {
 	    _react2.default.render(_react2.default.createElement(Root, null), document.getElementById('app'));
 	});
 
@@ -21494,6 +21490,7 @@
 
 
 	var Ajax = __webpack_require__(243);
+	__webpack_require__(173);
 	var Users = _react2.default.createClass({
 	    displayName: 'Users',
 	    render: function render() {
@@ -21511,8 +21508,36 @@
 	});
 	var Stats = _react2.default.createClass({
 	    displayName: 'Stats',
+	    componentWillMount: function componentWillMount() {
+	        var _this = this;
+
+	        this.setState({ Players: false });
+	        document.getElementById("change").setAttribute("background", "none");
+
+	        console.log(document.getElementById("region").value);
+	        if (document.getElementById("region").value == "us") {
+	            var region = "us";
+	        } else if (document.getElementById("region").value == "korea") {
+	            var region = "kr";
+	        } else if (document.getElementById("region").value == "japan") {
+	            var region = "kr";
+	        } else if (document.getElementById("region").value == "russia") {
+	            var region = "eu";
+	        }
+
+	        fetch('https://api.lootbox.eu/pc/' + region + "/" + document.getElementById("player").value + "/quick-play/heroes").then(function (result) {
+	            return result.json();
+	        }).then(function (json) {
+	            _this.setState({
+	                Text: json.data.name,
+	                data: json.data.playtime
+	            });
+	        });
+	    },
+
 
 	    render: function render() {
+
 	        return document.getElementById("change").setAttribute("background", "/Overwatch/images/killdeath.jpg"), _react2.default.createElement(
 	            'div',
 	            null,
@@ -21668,7 +21693,7 @@
 	var Search = _react2.default.createClass({
 	    displayName: 'Search',
 	    componentWillMount: function componentWillMount() {
-	        var _this = this;
+	        var _this2 = this;
 
 	        this.setState({ Players: false });
 	        document.getElementById("change").setAttribute("background", "none");
@@ -21683,11 +21708,11 @@
 	        } else if (document.getElementById("region").value == "russia") {
 	            var region = "eu";
 	        }
+
 	        fetch('https://api.lootbox.eu/pc/' + region + "/" + document.getElementById("player").value + "/profile").then(function (result) {
 	            return result.json();
 	        }).then(function (json) {
-	            console.log(json);
-	            _this.setState({
+	            _this2.setState({
 	                Players: json.data,
 	                userName: json.data.username,
 	                rank: json.data.competitive.rank,
@@ -21733,7 +21758,7 @@
 	var PatchNotes = _react2.default.createClass({
 	    displayName: 'PatchNotes',
 	    componentWillMount: function componentWillMount() {
-	        var _this2 = this;
+	        var _this3 = this;
 
 	        this.setState({ patchNotes: false });
 	        document.getElementById("change").setAttribute("background", "none");
@@ -21741,7 +21766,7 @@
 	            return result.json();
 	        }).then(function (json) {
 	            console.log(json);
-	            _this2.setState({ patchNotes: json.patchNotes[0].detail });
+	            _this3.setState({ patchNotes: json.patchNotes[0].detail });
 	        });
 	    },
 	    render: function render() {
@@ -21756,17 +21781,17 @@
 	    function Layout() {
 	        _classCallCheck(this, Layout);
 
-	        var _this3 = _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).call(this));
+	        var _this4 = _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).call(this));
 
-	        _this3.state = { name: "Will" };
-	        _this3.name = "Will";
-	        _this3.style = {
+	        _this4.state = { name: "Will" };
+	        _this4.name = "Will";
+	        _this4.style = {
 	            color: 'black',
 	            backgroundImage: 'url(' + './images/tracer.jpg' + ')'
 
 	        };
-	        _this3.searched = { searched: true };
-	        return _this3;
+	        _this4.searched = { searched: true };
+	        return _this4;
 	    }
 
 	    _createClass(Layout, [{
@@ -21781,7 +21806,7 @@
 	            return _react2.default.createElement(
 	                _reactRouter.Router,
 	                { history: _reactRouter.browserHistory },
-	                _react2.default.createElement(_reactRouter.Route, { path: '/Overwatch', component: Users }),
+	                _react2.default.createElement(_reactRouter.Route, { path: '/Overwatch/index.html', component: Users }),
 	                _react2.default.createElement(_reactRouter.Route, { path: '/Overwatch/Search', component: Search }),
 	                _react2.default.createElement(_reactRouter.Route, { path: '/Overwatch/PatchNotes', component: PatchNotes }),
 	                _react2.default.createElement(_reactRouter.Route, { path: '/Overwatch/Stats', component: Stats })
@@ -27507,6 +27532,7 @@
 	        key: "handleClick",
 	        value: function handleClick() {
 	            this.context.router.push('/Overwatch/Search');
+	            //this.context.router.push('/React/Overwatch/Search');
 	        }
 	    }, {
 	        key: "render",
@@ -27522,6 +27548,15 @@
 	                        _Button2.default,
 	                        { child: this.props.child },
 	                        " "
+	                    ),
+	                    _react2.default.createElement(
+	                        "form",
+	                        { action: "./graphs.html" },
+	                        _react2.default.createElement(
+	                            "button",
+	                            { type: "submit" },
+	                            "Hours Played"
+	                        )
 	                    )
 	                );
 	            } else {
@@ -27637,6 +27672,7 @@
 	    _createClass(Button, [{
 	        key: "handleClick",
 	        value: function handleClick() {
+	            //this.context.router.push('/React/Overwatch/Search');
 	            this.context.router.push('/Overwatch/Search');
 	        }
 	    }, {
@@ -27764,11 +27800,13 @@
 	        key: "patchNotes",
 	        value: function patchNotes() {
 	            this.context.router.push('/Overwatch/PatchNotes');
+	            //this.context.router.push('/React/Overwatch/PatchNotes');
 	        }
 	    }, {
 	        key: "stats",
 	        value: function stats() {
 	            this.context.router.push('Overwatch/Stats');
+	            // this.context.router.push('React/Overwatch/Stats');
 	        }
 	    }, {
 	        key: "toggleCollapse",
@@ -48090,257 +48128,6 @@
 	module.exports = onlyChild;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
-
-/***/ },
-/* 393 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	/**
-	 * Created by konstantin on 9/24/16.
-	 */
-	/*!
-	 * Bootstrap without jQuery v0.6.1 for Bootstrap 3
-	 * By Daniel Davis under MIT License
-	 * https://github.com/tagawa/bootstrap-without-jquery
-	 */
-
-	(function () {
-	    'use strict';
-
-	    /*
-	     * Utility functions
-	     */
-
-	    // transitionend - source: https://stackoverflow.com/questions/5023514/how-do-i-normalize-css3-transition-functions-across-browsers#answer-9090128
-
-	    function transitionEndEventName() {
-	        var i,
-	            el = document.createElement('div'),
-	            transitions = {
-	            'transition': 'transitionend',
-	            'OTransition': 'otransitionend', // oTransitionEnd in very old Opera
-	            'MozTransition': 'transitionend',
-	            'WebkitTransition': 'webkitTransitionEnd'
-	        };
-
-	        for (i in transitions) {
-	            if (transitions.hasOwnProperty(i) && el.style[i] !== undefined) {
-	                return transitions[i];
-	            }
-	        }
-
-	        return false;
-	    }
-	    var transitionend = transitionEndEventName();
-
-	    // Get an event's target element and the element specified by the "data-target" attribute
-	    function getTargets(event) {
-	        var targets = {};
-	        event = event || window.event;
-	        targets.evTarget = event.currentTarget || event.srcElement;
-	        var dataTarget = targets.evTarget.getAttribute('data-target');
-	        targets.dataTarget = dataTarget ? document.querySelector(dataTarget) : false;
-	        return targets;
-	    }
-
-	    // Get the potential max height of an element
-	    function getMaxHeight(element) {
-	        // Source: http://n12v.com/css-transition-to-from-auto/
-	        var prevHeight = element.style.height;
-	        element.style.height = 'auto';
-	        var maxHeight = getComputedStyle(element).height;
-	        element.style.height = prevHeight;
-	        element.offsetHeight; // force repaint
-	        return maxHeight;
-	    }
-
-	    // Fire a specified event
-	    // Source: http://youmightnotneedjquery.com/
-	    function fireTrigger(element, eventType) {
-	        if (document.createEvent) {
-	            var event = document.createEvent('HTMLEvents');
-	            event.initEvent(eventType, true, false);
-	            element.dispatchEvent(event);
-	        } else {
-	            element.fireEvent('on' + eventType);
-	        }
-	    }
-
-	    /*
-	     * Collapse action
-	     * 1. Get list of all elements that are collapse triggers
-	     * 2. Add click event listener to these elements
-	     * 3. When clicked, change target element's class name from "collapse" to "collapsing"
-	     * 4. When action (collapse) is complete, change target element's class name from "collapsing" to "collapse in"
-	     * 5. Do the reverse, i.e. "collapse in" -> "collapsing" -> "collapse"
-	     */
-
-	    // Show a target element
-	    function show(element, trigger) {
-	        element.classList.remove('collapse');
-	        element.classList.add('collapsing');
-	        trigger.classList.remove('collapsed');
-	        trigger.setAttribute('aria-expanded', true);
-
-	        // Set element's height to its maximum height
-	        element.style.height = getMaxHeight(element);
-
-	        // Call the complete() function after the transition has finished
-	        if (transitionend) {
-	            element.addEventListener(transitionend, function () {
-	                complete(element);
-	            }, false);
-	        } else {
-	            // For browsers that don't support transitions (e.g. IE9 and lower);
-	            complete(element);
-	        }
-	    }
-
-	    // Hide a target element
-	    function hide(element, trigger) {
-	        element.classList.remove('collapse');
-	        element.classList.remove('in');
-	        element.classList.add('collapsing');
-	        trigger.classList.add('collapsed');
-	        trigger.setAttribute('aria-expanded', false);
-
-	        // Reset element's height
-	        element.style.height = getComputedStyle(element).height;
-	        element.offsetHeight; // force repaint
-	        element.style.height = '0px';
-	    }
-
-	    // Change classes once transition is complete
-	    function complete(element) {
-	        element.classList.remove('collapsing');
-	        element.classList.add('collapse');
-	        element.setAttribute('aria-expanded', false);
-
-	        // Check whether the element is unhidden
-	        if (element.style.height !== '0px') {
-	            element.classList.add('in');
-	            element.style.height = 'auto';
-	        }
-	    }
-
-	    // Start the collapse action on the chosen element
-	    function doCollapse(event) {
-	        event.preventDefault();
-	        var targets = getTargets(event);
-	        var dataTarget = targets.dataTarget;
-
-	        // Add the "in" class name when elements are unhidden
-	        if (dataTarget.classList.contains('in')) {
-	            hide(dataTarget, targets.evTarget);
-	        } else {
-	            show(dataTarget, targets.evTarget);
-	        }
-	        return false;
-	    }
-
-	    // Get all elements that are collapse triggers and add click event listeners
-	    var collapsibleList = document.querySelectorAll('[data-toggle=collapse]');
-	    for (var i = 0, leni = collapsibleList.length; i < leni; i++) {
-	        collapsibleList[i].onclick = doCollapse;
-	    }
-
-	    /*
-	     * Alert dismiss action
-	     * 1. Get list of all elements that are alert dismiss buttons
-	     * 2. Add click event listener to these elements
-	     * 3. When clicked, find the target or parent element with class name "alert"
-	     * 4. Remove that element from the DOM
-	     */
-
-	    // Start the collapse action on the chosen element
-	    function doDismiss(event) {
-	        event.preventDefault();
-	        // Get target element from data-target attribute
-	        var targets = getTargets(event);
-	        var target = targets.dataTarget;
-
-	        if (!target) {
-	            // If data-target not specified, get parent or grandparent node with class="alert"
-	            var parent = targets.evTarget.parentNode;
-	            if (parent.classList.contains('alert')) {
-	                target = parent;
-	            } else if (parent.parentNode.classList.contains('alert')) {
-	                target = parent.parentNode;
-	            }
-	        }
-
-	        fireTrigger(target, 'close.bs.alert');
-	        target.classList.remove('in');
-
-	        function removeElement() {
-	            // Remove alert from DOM
-	            try {
-	                target.parentNode.removeChild(target);
-	                fireTrigger(target, 'closed.bs.alert');
-	            } catch (e) {
-	                window.console.error('Unable to remove alert');
-	            }
-	        }
-
-	        // Call the complete() function after the transition has finished
-	        if (transitionend && target.classList.contains('fade')) {
-	            target.addEventListener(transitionend, function () {
-	                removeElement();
-	            }, false);
-	        } else {
-	            // For browsers that don't support transitions (e.g. IE9 and lower);
-	            removeElement();
-	        }
-
-	        return false;
-	    }
-
-	    // Get all alert dismiss buttons and add click event listeners
-	    var dismissList = document.querySelectorAll('[data-dismiss=alert]');
-	    for (var j = 0, lenj = dismissList.length; j < lenj; j++) {
-	        dismissList[j].onclick = doDismiss;
-	    }
-
-	    /*
-	     * Dropdown action
-	     * 1. Get list of all elements that are dropdown triggers
-	     * 2. Add click and blur event listeners to these elements
-	     * 3. When clicked, add "open" to the target element's class names, or remove if it exists
-	     * 4. On blur, remove "open" from the target element's class names
-	     */
-
-	    // Show a dropdown menu
-	    function doDropdown(event) {
-	        event = event || window.event;
-	        var evTarget = event.currentTarget || event.srcElement;
-	        evTarget.parentElement.classList.toggle('open');
-	        return false;
-	    }
-
-	    // Close a dropdown menu
-	    function closeDropdown(event) {
-	        event = event || window.event;
-	        var evTarget = event.currentTarget || event.srcElement;
-	        evTarget.parentElement.classList.remove('open');
-
-	        // Trigger the click event on the target if it not opening another menu
-	        if (event.relatedTarget && event.relatedTarget.getAttribute('data-toggle') !== 'dropdown') {
-	            event.relatedTarget.click();
-	        }
-	        return false;
-	    }
-
-	    // Set event listeners for dropdown menus
-	    var dropdownList = document.querySelectorAll('[data-toggle=dropdown]');
-	    for (var k = 0, dropdown, lenk = dropdownList.length; k < lenk; k++) {
-	        dropdown = dropdownList[k];
-	        dropdown.setAttribute('tabindex', '0'); // Fix to make onblur work in Chrome
-	        dropdown.onclick = doDropdown;
-	        dropdown.onblur = closeDropdown;
-	    }
-	})();
 
 /***/ }
 /******/ ]);
