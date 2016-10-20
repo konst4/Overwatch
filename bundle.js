@@ -21690,6 +21690,7 @@
 	        );
 	    }
 	});
+
 	var Search = _react2.default.createClass({
 	    displayName: 'Search',
 	    componentWillMount: function componentWillMount() {
