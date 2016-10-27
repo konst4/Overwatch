@@ -33,8 +33,8 @@ app.get('/Overwatch/', function(request, response) {
   response.render('pages/index');
 });
 
-app.post('/upload',function(request,response){
-	console.log('uploading file');
+app.post('/hit',function(request,response){
+	console.log('you hit the post');
 });
 
 
