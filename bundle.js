@@ -21690,12 +21690,14 @@
 	        );
 	    }
 	});
+
 	var Search = _react2.default.createClass({
 	    displayName: 'Search',
 	    componentWillMount: function componentWillMount() {
 	        var _this2 = this;
 
 	        this.setState({ Players: false });
+
 	        document.getElementById("change").setAttribute("background", "none");
 
 	        console.log(document.getElementById("region").value);
@@ -21806,7 +21808,7 @@
 	            return _react2.default.createElement(
 	                _reactRouter.Router,
 	                { history: _reactRouter.browserHistory },
-	                _react2.default.createElement(_reactRouter.Route, { path: '/Overwatch/index.html', component: Users }),
+	                _react2.default.createElement(_reactRouter.Route, { path: '/Overwatch/', component: Users }),
 	                _react2.default.createElement(_reactRouter.Route, { path: '/Overwatch/Search', component: Search }),
 	                _react2.default.createElement(_reactRouter.Route, { path: '/Overwatch/PatchNotes', component: PatchNotes }),
 	                _react2.default.createElement(_reactRouter.Route, { path: '/Overwatch/Stats', component: Stats })
@@ -27529,10 +27531,25 @@
 	            this.props.changeTitle(title);
 	        }
 	    }, {
+	        key: "success",
+	        value: function success() {}
+	    }, {
 	        key: "handleClick",
 	        value: function handleClick() {
-	            this.context.router.push('/Overwatch/Search');
-	            //this.context.router.push('/React/Overwatch/Search');
+	            // this is for google cloud
+	            $.ajax({
+	                type: "POST",
+	                url: "/upload",
+	                success: console.log("Uploaded file to Google Cloud"),
+	                dataType: "*.jpg"
+	            });
+	            // this is for firebase.
+	            $.ajax({
+	                type: "POST",
+	                url: "/uploadf",
+	                success: console.log("Uploaded file to Firebase"),
+	                dataType: "*.jpg"
+	            });
 	        }
 	    }, {
 	        key: "render",
@@ -27549,6 +27566,7 @@
 	                        { child: this.props.child },
 	                        " "
 	                    ),
+	                    _react2.default.createElement("input", { type: "file", id: "myFile" }),
 	                    _react2.default.createElement(
 	                        "form",
 	                        { action: "./graphs.html" },
@@ -27557,6 +27575,11 @@
 	                            { type: "submit" },
 	                            "Hours Played"
 	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "button",
+	                        { onClick: this.handleClick, type: "submit" },
+	                        "Submit"
 	                    )
 	                );
 	            } else {

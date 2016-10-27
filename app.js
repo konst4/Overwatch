@@ -7,12 +7,12 @@ import ReactDOM from "react-dom"
 import Layout from "./components/Layout";
 import {Router, Route, IndexRoute, hashHistory} from "react-router"
 
-import Bootstrap from "./vendor/bootstrap-without-jquery";
+
 
 const app = document.getElementById('app');
 ReactDOM.render(
     <Layout/>,app
 );
-Router.run(routes, Router.HashLocation, (Root) => {
+Router.run(Route, Router.HashLocation, (Root) => {
     React.render(<Root/>, document.getElementById('app'));
 });
