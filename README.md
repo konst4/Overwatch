@@ -1,39 +1,12 @@
-# node-js-getting-started
+Authentication works!
+check it out at 
+https://overwatch13.herokuapp.com/Overwatch/
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+The first scenario is Search. Users can search there character profile and then receive information about there total wins. The users stats will come from a ajax call that hits the unofficial blizzard Overwatch API. The function then will display the information received from the API.
 
-This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+Patch notes the user can click the patch notes button and receive the latest patch notes. The latest patch notes will be displayed to the user. There will also be links to the official blizzard site containing the patch updates.
 
-## Running Locally
+The Hoursplayed will be able to display the user the characters the user has played the most.
+This displays the images using d3
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
-
-```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
-```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
-or
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
-
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+Click the hours played button to view total hours played !
