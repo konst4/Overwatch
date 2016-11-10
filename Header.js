@@ -82,16 +82,16 @@ componentDidMount(){};
                     <Button child={this.props.child}> </Button>
                     <input type="file" id="myFile"/>
                     <form action="./graphs.html">
-                        <button type="submit">Hours Played</button>
+                        <button id="hoursPlayed" type="submit">Hours Played</button>
                     </form>
-                    <button onClick={this.handleClick} type="submit">Submit</button>
+                    <button  onClick={this.handleClick} type="submit">Submit</button>
                     <br>
                     </br>
                     <input id="username" value="root@gmail.com" onChange={this.handleChange.bind(this)}/>
                     <br>
                     </br>
                     <input type="password" id="pass" value="password" onChange={this.handleChange.bind(this)}/>
-                    <button onClick={this.handleClicks} type="submit">Login</button>
+                    <button  id="charless" onClick={this.handleClicks} type="submit">Login</button>
                 </div>
             );
         } else {

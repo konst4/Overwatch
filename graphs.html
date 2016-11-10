@@ -27,10 +27,37 @@
         .bubbleChart svg{
             background: #000000;
         }
+        .myButton {
+            background-color:#458bc7;
+            -moz-border-radius:28px;
+            -webkit-border-radius:28px;
+            border-radius:28px;
+            border:1px solid #1919ab;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:17px;
+            padding:16px 31px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #285766;
+        }
+        .myButton:hover {
+            background-color:#191d6b;
+        }
+        .myButton:active {
+            position:relative;
+            top:1px;
+        }
     </style>
+    <script>function back() {
+        window.history.back();
+
+    }</script>
 </head>
 <body style="background: #000000">
 <h1 style="color:white">Loading Please Wait ....</h1>
 <div class="bubbleChart"/>
+<div> <button onclick="back()" class="myButton"> Back</button></div>
 </body>
 </html>
