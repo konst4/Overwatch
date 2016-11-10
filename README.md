@@ -1,5 +1,4 @@
-Authentication works!
-check it out at 
+
 https://overwatch13.herokuapp.com/Overwatch/
 
 We implemented these usability heuristics:
