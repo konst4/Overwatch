@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Bubble Chart</title>
+    <meta charset="utf-8">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,200italic,600italic&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+
+    <script src="https://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/misc.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/microplugin/src/microplugin.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
+    <script src="bubbles.js"></script>
+    <style>
+        .bubbleChart {
+            min-width: 100px;
+            max-width: 700px;
+            height: 700px;
+            margin: 0 auto;
+        }
+        .bubbleChart svg{
+            background: #000000;
+        }
+        .myButton {
+            background-color:#458bc7;
+            -moz-border-radius:28px;
+            -webkit-border-radius:28px;
+            border-radius:28px;
+            border:1px solid #1919ab;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:17px;
+            padding:16px 31px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #285766;
+        }
+        .myButton:hover {
+            background-color:#191d6b;
+        }
+        .myButton:active {
+            position:relative;
+            top:1px;
+        }
+    </style>
+    <script>function back() {
+        window.history.back();
+
+    }</script>
+</head>
+<body style="background: #000000">
+<h1 style="color:white">Loading Please Wait ....</h1>
+<div class="bubbleChart"/>
+<div> <button onclick="back()" class="myButton"> Back</button></div>
+</body>
+</html>
