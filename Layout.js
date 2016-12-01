@@ -70,32 +70,32 @@ var Stats = React.createClass({
                             <th>Country</th>
                         </tr>
                         <tr>
-                            <td>Abrafo</td>
+                            <td>Abrafo-4321</td>
                             <td>101/0</td>
                             <td>Germany</td>
                         </tr>
                         <tr>
-                            <td>Vehiron</td>
+                            <td>Vehiron-9430</td>
                             <td>99/5</td>
                             <td>Korea</td>
                         </tr>
                         <tr>
-                            <td>Dalek</td>
+                            <td>Dalek-1754</td>
                             <td>99/7</td>
                             <td>United States</td>
                         </tr>
                         <tr>
-                            <td>Alyameldir</td>
+                            <td>Alyameldir-9846</td>
                             <td>86/5</td>
                             <td>Korea</td>
                         </tr>
                         <tr>
-                            <td>Magne</td>
+                            <td>Magne-9505</td>
                             <td>85/5</td>
                             <td>Russia</td>
                         </tr>
                         <tr>
-                            <td>Alix</td>
+                            <td>Alix-9843</td>
                             <td>80/9</td>
                             <td>United States</td>
                         </tr>
@@ -149,7 +149,8 @@ const Search = React.createClass({
 
     render(){
         var divStyle = {
-            color: "white"
+            color: "white",
+            backgroundColor: "black"
         };
         document.getElementById("change").setAttribute("background", "./images/killdeath.jpg");
         if (this.state.Players == 1) {
@@ -174,8 +175,10 @@ const Search = React.createClass({
                     <h1>  {this.state.userName}</h1>
                 </div>
                 <span style={divStyle}>Current Competitive rank: {this.state.rank}</span>
-                <div style={divStyle}> Total Competitive wins: {this.state.wins}
-                </div>
+                <br></br>
+                <span style={divStyle}> Total Competitive wins: {this.state.wins}
+                </span>
+                <br></br>
                 <button className= "myButton" onClick={browserHistory.goBack}>Back</button>
             </div>
 

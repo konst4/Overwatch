@@ -78,8 +78,12 @@ componentDidMount(){};
             return (
                 <div >
                     <Title  title={this.props.title}/>
-                    <input id="player" value="Arthas-11308" onChange={this.handleChange.bind(this)}/>
+                    <form autocomplete="on">
+                    <input id="player" value="Arthas-11308" autoComplete="on" onChange={this.handleChange.bind(this)}/>
+                        </form>
+
                     <Button child={this.props.child}> </Button>
+
                     <input type="file" id="myFile"/>
                     <form action="./graphs.html">
                         <button id="hoursPlayed" type="submit">Hours Played</button>

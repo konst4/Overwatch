@@ -111,7 +111,8 @@ $(document).ready(function () {
     function ajaxCallBack(retString) {
         var items = [];
         retString = JSON.parse(retString);
-        for (var i = 0; i < retString.length/2; i++) {
+        console.log(retString);
+        for (var i = 0; i < retString.length/3; i++) {
             retString[i].name;
             first = retString[i].playtime;
             second = first.split(" ");
@@ -131,7 +132,7 @@ $(document).ready(function () {
 
     function ajax1() {
         return $.ajax({
-            url: 'https://api.lootbox.eu/pc/' + "us" + "/" + "Arthas-11308" + "/quick-play/heroes",
+            url: 'https://api.lootbox.eu/pc/us/Arthas-11308/quickplay/heroes',
             success: function (result) {
                 ajaxCallBack(result);
 
